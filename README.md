@@ -1,4 +1,4 @@
-ngTransclueMod
+ngTranscludeMod
 ==============
 
-A modification adding feature to Angular's ngTransclude
+A modification adding features to Angular's ngTransclude
