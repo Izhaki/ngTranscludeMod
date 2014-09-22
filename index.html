@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="App">
+
+<head>
+    <link rel="stylesheet" href="index.css" />
+
+    <script src="https://code.angularjs.org/1.3.0-beta.19/angular.js"></script>
+    <script src="ngTranscludeMod.js"></script>    
+    <script src="index.js"></script>
+</head>
+
+<body>
+
+    <p>Here the scope id is: <id>{{$id}}</id></p>
+
+    <transclude-sibling>
+        <pre>This content was transcluded using <b>ng-transclude</b> or <b>ng-transclude="sibling"</b>.</pre><pre>Its scope is: <id>{{$id}}</id> the parent of which is <id>{{$parent.$id}}</id></pre>
+    </transclude-sibling>
+
+    <transclude-parent>
+        <pre>This content was transcluded using <b>ng-transclude="parent"</b>.</pre><pre>Its scope is: <id>{{$id}}</id> the parent of which is <id>{{$parent.$id}}</id></pre>
+    </transclude-parent>
+
+    <transclude-child>
+        <pre>This content was transcluded using <b>ng-transclude="child"</b>.</pre><pre>Its scope is: <id>{{$id}}</id> the parent of which is <id>{{$parent.$id}}</id></pre>
+    </transclude-child>
+
+</body>
+
+</html>
