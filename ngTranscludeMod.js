@@ -1,12 +1,12 @@
 angular.module( 'ngTranscludeMod', [] )
 
-.config(function($provide){
+.config(['$provide', function($provide) {
     $provide.decorator('ngTranscludeDirective', ['$delegate', function($delegate) {
         // Remove the original directive
         $delegate.shift();
         return $delegate;
     }]);
-})
+}])
 
 .directive( 'ngTransclude', function() {
     return {
@@ -19,9 +19,9 @@ angular.module( 'ngTranscludeMod', [] )
                 'Element: {0}',
                 startingTag($element) );
             }
-      
+
             var iScopeType = $attrs['ngTransclude'] || 'sibling';
-  
+
             switch ( iScopeType ) {
                 case 'sibling':
                     $transclude( function( clone ) {
@@ -42,7 +42,7 @@ angular.module( 'ngTranscludeMod', [] )
                         $element.append( clone );
                         $element.on( '$destroy', function() {
                             iChildScope.$destroy();
-                        });            
+                        });
                     });
                     break;
             }
